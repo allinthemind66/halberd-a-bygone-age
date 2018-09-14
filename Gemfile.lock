@@ -1,12 +1,14 @@
 GEM
   specs:
     artii (2.1.2)
+    byebug (10.0.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   artii (~> 2.1)
+  byebug (~> 10.0)
 
 BUNDLED WITH
    1.16.4
