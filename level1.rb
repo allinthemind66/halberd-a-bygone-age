@@ -1,98 +1,37 @@
-def say_hello
-    # pygame.mixer.init()
-    # pygame.mixer.music.load("./")
-    puts ('  ___ ___        .__ ___.                    .___ _______________  _______  ____ ')
-    puts (' /   |   \_____  |  |\_ |__   ___________  __| _/ \_____  \   _  \ \   _  \/_   |')
-    puts ('/    ~    \__  \ |  | | __ \_/ __ \_  __ \/ __ |   /  ____/  /_\  \/  /_\  \|   |')
-    puts ('\    Y    // __ \|  |_| \_\ \  ___/|  | \/ /_/ |  /       \  \_/   \  \_/   \   |')
-    puts (' \___|_  /(____  /____/___  /\___  >__|  \____ |  \_______ \_____  /\_____  /___|')
-    puts ('      \/      \/         \/     \/           \/          \/     \/       \/     ')
-    puts ('###########################################################################################')
-    puts ('###########################################################################################')
-    puts ('###########################################################################################')
+require 'artii'
 
-    puts (' __      __       .__                               ')
-    puts ('/  \    /  \ ____ |  |   ____  ____   _____   ____  ')
-    puts ('\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \ ')
-    puts (' \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/ ')
-    puts ('  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >')
-    puts ('       \/       \/          \/            \/     \/ ')
 
+def title
+    puts ('  ___ ___        .__ ___.                    .___')
+    puts (' /   |   \_____  |  |\_ |__   ___________  __| _/')
+    puts ('/    ~    \__  \ |  | | __ \_/ __ \_  __ \/ __ | ')
+    puts ('\    Y    // __ \|  |_| \_\ \  ___/|  | \/ /_/ | ')
+    puts (' \___|_  /(____  /____/___  /\___  >__|  \____ | ')
+    puts ('      \/      \/         \/     \/           \/  ')
     puts ('###########################################################################################')
     puts ('###########################################################################################')
     puts ('###########################################################################################')
-
-#     puts("""
-#                                                _.gd8888888bp._
-#                                             .g88888888888888888p.
-#                                           .d8888P""       ""Y8888b.
-#                                           "Y8P"               "Y8P'
-#                                              `.               ,'
-#                                                \     .-.     /
-#                                                 \   (___)   /
-#      .------------------._______________________:__________j
-#     /                   |                      |           |`-.,_
-#     \###################|######################|###########|,-'`
-#      `------------------'                       :    ___   l
-#                                                 /   (   )   \
-#                                                /     `-'     \
-#                                              ,'               `.
-#                                           .d8b.               .d8b.
-#                                           "Y8888p..       ,.d8888P"
-#                                             "Y88888888888888888P"
-#                                                ""YY8888888PP""
-#
-#     """)
-#
-#     puts("""
-#                      _,,--.._
-#                     /. ` ` .  `.
-#                     )|       `  `.
-#        .           / |         `  `
-#         `.        / /            ` `
-#          `.`.    / /              ` `
-#            `.`.'' /                ' :
-#             <','/'`                . ;
-#            ,-'.-    `             , /
-#        _.-',-^`       `      _.-----
-#  /`==::.,-'     `       ` ,-'
-# / /               `     .;
-# | |..               ` .,' `.
-# | ':`....---.       ,'`'.   `.
-#  .`:.:.:.:.:-..    /     `.   `.
-#   .`ccoccoccoc'``./        `.   `.
-#    `.`CQCCQCCCQCC/           `.   `.
-#      `.`8O8O8O8O8(             `.   `.
-#        `.`_-_@-@_-;              `. .'"'.
-#             '""'                   :,' ,--'
-#                                     `.` _,--
-#              A                        `.  _,',.
-#             (@)                         `. .-' `_
-#                                           `. ,-^.`.
-#                A                            `. - _.-.
-#               (@)                             `.', ,'-
-#                                                 `. _,-`__
-#                                                   `. _-,`|
-#                                                     |,_-`|
-#                                                     '----'
-#     """)
-    puts "Hi there young one! What shall I call you?"
-    name = gets.chomp
-    puts "                                             "
-    puts "Why hello there #{name}!"
-    puts "                                             "
-    puts "What is your weapon of choice?"
-    weapon = gets.chomp
-    puts "                                             "
-    puts "I see.. #{weapon} is a very good choice indeed."
-    puts "                                             "
-    puts "Before we get started, I would just like to ask you one more thing. I can't tell with the robes you're wearing."
-    puts "                                             "
-    puts "Are you a human, Dwarf or Elf"
-    race = gets.chomp
-    puts "                                             "
-    puts "You are a #{race}. Your name is #{name} and you are wielding a #{weapon}."
-    puts "                                             "
+    a = Artii::Base.new :font => 'slant'
+    puts (a.asciify('Journey Through The Darkness'))
+    puts ('###########################################################################################')
+    puts ('###########################################################################################')
+    puts ('###########################################################################################')
   end
 
-say_hello
+# This is the explanation of the game. Mood setting tag that
+# will be before every game set in the halberd universe
+def world_tag
+  puts "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in '
+  culpa qui officia deserunt mollit anim id est laborum."
+end
+
+
+def app
+  title
+  world_tag
+end
+
+app
