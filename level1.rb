@@ -38,9 +38,25 @@ def game_start
   containing torches. The light from these torches is barely strong enough to illuminate
   the closest parts of the dungeon."
 
-  puts "Along the opposite wall you see a wooden door, that has a barred porthole.
-  To your right you see what appears to be a man who is shackled to the wall.
-  To the left there is just an empty wall."
+  puts "Along the opposite wall to the North you see a wooden door, that has a barred porthole.
+  To your right on the eastern wall you see what appears to be a man who is shackled to the wall.
+  To the left on the western part of the room there is just an empty wall."
+
+  while true
+    puts "What would you like to do now?"
+    choice = gets.chomp
+    if choice === "North"
+      puts choice
+      break
+    elsif choice === "West"
+      puts choice
+      break
+    elsif choice === "East"
+      puts choice
+    else
+      puts "Invalid choice, try again!"
+    end
+  end
 
 end
 def app
