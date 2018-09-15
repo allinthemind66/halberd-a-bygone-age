@@ -48,11 +48,11 @@ def game_start
   puts "Along the opposite wall to the North you see a wooden door, that has a barred porthole.
   To your right on the eastern wall you see what appears to be a man who is shackled to the wall.
   To the left on the western part of the room there is just an empty wall."
-  puts "What would you like to do now?"
-  initial_choice = gets.chomp
-  level_1_choices = Level1StartRoomChoices.new.first_choice(initial_choice)
-  # level_1_choices.first_choice(initial_choice)
-  puts `clear`
+  # puts "What would you like to do now?"
+  # initial_choice = gets.chomp
+  level_1_choices = Level1StartRoomChoices.new
+  # byebug
+  level_1_choices.first_choice
 
   # while true
   #   byebug
