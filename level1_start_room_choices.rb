@@ -1,5 +1,5 @@
 require './input_choice.rb'
-class GenericChoice < InputChoice
+class Level1StartRoomChoices < InputChoice
   def first_choice(choice)
     while true
       # byebug
@@ -7,12 +7,16 @@ class GenericChoice < InputChoice
       choice = gets.chomp
       if choice === "North"
         puts choice
-        break
+
       elsif choice === "West"
         puts choice
         break
       elsif choice === "East"
         puts choice
+      elsif choice === "help"
+        Level1StartRoomChoices.new.help
+      elsif choice === "hello"
+        puts 'A voice somewhere responds "Hi there."'
       else
         puts "Invalid choice, try again!"
       end
