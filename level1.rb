@@ -77,6 +77,7 @@ def game_start
     print c
     sleep (0.05)
   end
+  puts "\n"
   puts "                                                                        "
   "The room is a large dimly lit chamber. Along the walls you notice sconces
   containing torches. The light from these torches is barely strong enough to illuminate
@@ -84,6 +85,7 @@ def game_start
     print c
     sleep (0.05)
   end
+  puts "\n"
   puts "                                                                        "
   "Along the opposite wall to the North you see a wooden door, that has a barred porthole.
   To your right on the eastern wall you see what appears to be a man who is shackled to the wall.

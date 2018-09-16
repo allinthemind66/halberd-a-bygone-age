@@ -10,4 +10,11 @@ class InputChoice
     puts '##############################################################'
     puts 'Game Commands: Map, Save, Quit Game'
   end
+
+  def scroll_text(text)
+    text.each_char do |c|
+      print c
+      sleep (0.05)
+    end
+  end
 end
