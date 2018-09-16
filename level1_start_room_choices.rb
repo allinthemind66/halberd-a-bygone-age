@@ -1,8 +1,8 @@
 require './input_choice.rb'
 class Level1StartRoomChoices < InputChoice
 
-  @door_locked = true
   def first_choice
+    @door_locked = true
     while true
       # byebug
       puts "What would you like to do now?"
@@ -35,8 +35,7 @@ class Level1StartRoomChoices < InputChoice
       when "hello"
         puts 'A voice somewhere responds "Hi there."'
       when "open door"
-        byebug
-        if @door_locked = false
+        if @door_locked === false
           scroll_text("You open the door")
           puts "\n"
         else
