@@ -29,7 +29,9 @@ class Level1StartRoomChoices < InputChoice
         par =  "You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
         'My name is Sir Goodboy.'
         'You don't recognize me?' he says.
-        At this moment you hear a loud boom, and the door unhinges slightly"
+        At this moment you hear a loud boom, and the door unhinges slightly.
+        You hear a faint voice mumble '.....My liege...escape while theres still time...
+        ARRGHHHHHHHH!"
         scroll_text(par)
         puts "\n"
       when "hello"
