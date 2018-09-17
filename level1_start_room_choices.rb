@@ -9,7 +9,7 @@ class Level1StartRoomChoices < InputChoice
       choice = gets.chomp
       case choice
       when "North"
-        scroll_text("You see a door")
+        scroll_text("You see a closed door.")
         puts "\n"
       when "West"
         scroll_text("There is nothing but a wall with a torch.")
@@ -27,7 +27,7 @@ class Level1StartRoomChoices < InputChoice
       when 'talk to man'
         @door_locked = false
         par =  "You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
-        his name is Sir Goodboy.
+        'My name is Sir Goodboy.'
         'You don't recognize me?' he says.
         At this moment you hear a loud boom, and the door unhinges slightly"
         scroll_text(par)
@@ -42,6 +42,8 @@ class Level1StartRoomChoices < InputChoice
           scroll_text("You can't open the door. It's locked from the outside!")
           puts "\n"
         end
+      when 'quit'
+        break
       else
         puts "Invalid choice, try again!"
       end
