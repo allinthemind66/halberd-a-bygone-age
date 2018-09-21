@@ -27,7 +27,7 @@ class Level1StartRoomChoices < InputChoice
       when 'talk to man'
         @door_locked = false
         par =  "You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
-        'My name is Sir Goodboy.'
+        'What?! Its me Ragnir.'
         'You don't recognize me?' he says.
         At this moment you hear a loud boom, and the door unhinges slightly.
         You hear a faint voice mumble '.....My liege...escape while theres still time...
@@ -54,6 +54,9 @@ class Level1StartRoomChoices < InputChoice
           scroll_text("You can't open the door. It's locked from the outside!")
           puts "\n"
         end
+      when "Take torch"
+        puts 'You take the torch from off the wall, it forms a pool of light around you'
+        puts "\n"
       when 'quit'
         break
         puts "you are quiting. goodbye"
