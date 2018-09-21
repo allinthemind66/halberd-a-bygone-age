@@ -75,7 +75,7 @@ def game_start
   puts "In the darkness you awaken. You find yourself in a strange place that is
   both familiar and unfamiliar in equal measure. Your arms feel haggard and sore
   and as you look around you notice shackles on the wall that have been somehow destroyed.
-  # With your arms free you stand up and really look at your surroundings."
+  With your arms free you stand up and really look at your surroundings."
   # .each_char do |c|
   #   print c
   #   sleep (0.05)
