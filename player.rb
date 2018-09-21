@@ -1,3 +1,5 @@
 class Player
-  @@inventory = []
+  attr_accessor :@@inventory
+  byebug
+  @@inventory = ['goo']
 end

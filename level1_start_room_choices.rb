@@ -44,8 +44,19 @@ class Level1StartRoomChoices < InputChoice
           scroll_text("You can't open the door. It's locked from the outside!")
           puts "\n"
         end
+      when "leave room"
+        if @door_locked === false
+          scroll_text("You walk outside into a dimly lit hallway.")
+          puts "\n"
+          fork{ exec "killall", "afplay"}
+          break
+        else
+          scroll_text("You can't open the door. It's locked from the outside!")
+          puts "\n"
+        end
       when 'quit'
         break
+        puts "you are quiting. goodbye"
       else
         puts "Invalid choice, try again!"
       end
