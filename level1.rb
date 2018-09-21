@@ -106,6 +106,7 @@ def game_start
 end
 
 def app
+  player = Player.new
   play_music
   title
   world_tag
