@@ -1,4 +1,5 @@
 require './input_choice.rb'
+require "./player.rb"
 class Level1StartRoomChoices < InputChoice
 
   def first_choice
@@ -12,7 +13,12 @@ class Level1StartRoomChoices < InputChoice
         scroll_text("You see a closed door.")
         puts "\n"
       when "West"
-        scroll_text("There is nothing but a wall with a torch.")
+        if Player.all.first.inventory.include?("Torch")
+          puts "You see an empty wall where a torch was."
+        else
+          scroll_text("There is nothing but a wall with a torch.")
+          puts "\n"
+        end
         puts "\n"
       when "East"
         scroll_text("You look to your right and see a man shackled to the wall. Maybe you should go talk to him...")
@@ -55,8 +61,13 @@ class Level1StartRoomChoices < InputChoice
           puts "\n"
         end
       when "Take torch"
-        puts 'You take the torch from off the wall, it forms a pool of light around you'
-        puts "\n"
+        if Player.all.first.inventory.include?("Torch")
+          puts "You have already taken the torch"
+        else
+          puts 'You take the torch from off the wall, it forms a pool of light around you'
+          puts "\n"
+          Player.all.first.add_item("Torch")
+        end
       when 'quit'
         break
         puts "you are quiting. goodbye"

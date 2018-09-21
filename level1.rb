@@ -2,6 +2,7 @@ require 'artii'
 require './level1_start_room_choices.rb'
 require './input_choice.rb'
 require './dungeon_hall.rb'
+require './player.rb'
 require 'byebug'
 
 def play_music
@@ -106,7 +107,7 @@ def game_start
 end
 
 def app
-  player = Player.new
+  @player = Player.new
   play_music
   title
   world_tag
