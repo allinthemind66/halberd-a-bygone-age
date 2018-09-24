@@ -32,12 +32,17 @@ class Level1StartRoomChoices < InputChoice
         puts 'Game Commands: Map, Save, Quit Game'
       when 'talk to man', 'talk', 'Talk', 'man', 'Talk to Man', 'Talk to Man'
         @door_locked = false
-        par =  "You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
+        scroll_text("You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
         'What?! Its me Ragnir.'
-        'You don't recognize me?' he says. At this moment you hear a loud boomthe door unhinges slightly.
-        You hear a faint voice mumble '.....My liege...escape while theres still time...
-        ARRGHHHHHHHH!"
-        scroll_text(par)
+        'You don't recognize me?' he says.
+        At this moment you hear a loud boom and the door unhinges slightly.\n")
+        fork{exec "afplay", "./sounds/Explosion_2.wav"}
+        sleep(1)
+
+        scroll_text("You hear a faint voice mumble '.....My liege...escape while theres still time...
+        ARRGHHHHHHHH!")
+
+
         puts "\n"
       when "hello", 'Hello'
         puts 'A voice somewhere responds "Hi there."'
