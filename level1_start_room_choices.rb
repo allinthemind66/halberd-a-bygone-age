@@ -30,6 +30,9 @@ class Level1StartRoomChoices < InputChoice
         puts 'Other Commands: Talk, Open Door, open chest'
         puts '##############################################################'
         puts 'Game Commands: Map, Save, Quit Game'
+      when "inventory"
+        puts "You currently have: "
+        Player.all.first.inventory.each{|item| puts item }
       when 'talk to man', 'talk', 'Talk', 'man', 'Talk to Man', 'Talk to Man'
         @door_locked = false
         scroll_text("You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
@@ -77,12 +80,12 @@ class Level1StartRoomChoices < InputChoice
           Player.all.first.add_item("Torch")
         end
       when 'quit'
-        break
         puts "you are quiting. goodbye"
+        fork{ exec "killall", "afplay"}
+        break
       else
         puts "Invalid choice, try again!"
       end
     end
-    fork{ exec "killall", "afplay"}
   end
 end
