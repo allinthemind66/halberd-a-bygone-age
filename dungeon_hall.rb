@@ -5,7 +5,7 @@ class DungeonHall
     fork{ exec "afplay", "./music/dungeon_hallway.mp3"}
   end
   def choices
-    sleep(0.2)
+    sleep(0.01)
     puts "\n"
     puts "You leave the room. You are in a dungeon hallway. It is dark"
     play_music
@@ -17,6 +17,7 @@ class DungeonHall
         puts "It is dark and mysterious"
       when "quit"
         puts 'goodbye'
+        fork{ exec "killall", "afplay"}
         break
       end
     end
