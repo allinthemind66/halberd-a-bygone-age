@@ -1,7 +1,10 @@
 require './input_choice.rb'
 require "./player.rb"
 class Level1StartRoomChoices < InputChoice
-
+  attr_reader :quit
+  def initialize
+    @quit = false
+  end
   def first_choice
     @door_locked = true
     while true
@@ -81,11 +84,13 @@ class Level1StartRoomChoices < InputChoice
         end
       when 'quit'
         puts "you are quiting. goodbye"
+        @quit = true
         fork{ exec "killall", "afplay"}
         break
       else
         puts "Invalid choice, try again!"
       end
     end
+    @quit
   end
 end

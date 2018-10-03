@@ -103,8 +103,6 @@ def game_start
   puts "                                                                        "
   puts "                                                                        "
   puts "                                                                        "
-  level_1_choices = Level1StartRoomChoices.new
-  level_1_choices.first_choice
 end
 
 def app
@@ -113,7 +111,9 @@ def app
   title
   world_tag
   game_start
-  dungeon_hall = DungeonHall.new
+  level_1_choices = Level1StartRoomChoices.new
+  level_1_choices.first_choice
+  level_1_choices.quit ? return : dungeon_hall = DungeonHall.new
   dungeon_hall.choices
 end
 
