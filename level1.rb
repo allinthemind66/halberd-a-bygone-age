@@ -1,4 +1,5 @@
 require 'artii'
+require './intro.rb'
 require './level1_start_room_choices.rb'
 require './input_choice.rb'
 require './dungeon_hall.rb'
@@ -8,62 +9,6 @@ require 'byebug'
 
 def play_music
     pid = fork{exec "afplay", "./music/Halberd_theme.m4a"}
-end
-
-############### OPENING SEQUENCE ################################################
-
-def title
-    puts ('   ▄█    █▄       ▄████████  ▄█       ▀█████████▄     ▄████████    ▄████████ ████████▄  ')
-    sleep(0.2)
-    puts ('  ███    ███     ███    ███ ███         ███    ███   ███    ███   ███    ███ ███   ▀███ ')
-    sleep(0.2)
-    puts ('  ███    ███     ███    ███ ███         ███    ███   ███    █▀    ███    ███ ███    ███ ')
-    sleep(0.2)
-    puts (' ▄███▄▄▄▄███▄▄   ███    ███ ███        ▄███▄▄▄██▀   ▄███▄▄▄      ▄███▄▄▄▄██▀ ███    ███ ')
-    sleep(0.2)
-    puts ('▀▀███▀▀▀▀███▀  ▀███████████ ███       ▀▀███▀▀▀██▄  ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ███    ███ ')
-    sleep(0.2)
-    puts ('  ███    ███     ███    ███ ███         ███    ██▄   ███    █▄  ▀███████████ ███    ███ ')
-    sleep(0.2)
-    puts ('  ███    ███     ███    ███ ███▌    ▄   ███    ███   ███    ███   ███    ███ ███   ▄███ ')
-    sleep(0.2)
-    puts('  ███    █▀      ███    █▀  █████▄▄██ ▄█████████▀    ██████████   ███    ███ ████████▀  ')
-    sleep(0.2)
-    puts('                            ▀                                     ███    ███            ')
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts '       __                                     ________                           __       ________            ____             __                       '
-    sleep(0.2)
-    puts '      / /___  __  ___________  ___  __  __   /_  __/ /_  _________  __  ______ _/ /_     /_  __/ /_  ___     / __ \____ ______/ /______  ___  __________'
-    sleep(0.2)
-    puts ' __  / / __ \/ / / / ___/ __ \/ _ \/ / / /    / / / __ \/ ___/ __ \/ / / / __ `/ __ \     / / / __ \/ _ \   / / / / __ `/ ___/ //_/ __ \/ _ \/ ___/ ___/'
-    sleep(0.2)
-    puts '/ /_/ / /_/ / /_/ / /  / / / /  __/ /_/ /    / / / / / / /  / /_/ / /_/ / /_/ / / / /    / / / / / /  __/  / /_/ / /_/ / /  / ,< / / / /  __(__  )__  ) '
-    sleep(0.2)
-    puts '\____/\____/\__,_/_/  /_/ /_/\___/\__, /    /_/ /_/ /_/_/   \____/\__,_/\__, /_/ /_/    /_/ /_/ /_/\___/  /_____/\__,_/_/  /_/|_/_/ /_/\___/____/____/  '
-    sleep(0.2)
-    puts '                                 /____/                                /____/                                                                           '
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-  end
-
-# This is the explanation of the game. Mood setting tag that
-# will be before every game set in the halberd universe
-def world_tag
-  puts "                                                                        "
-  puts "                                                                        "
-  puts "In a grim and perlious world the darkness consumes all. Brave adventurers stalk forgotten halls
-  deep underground for the slight chance to make their fortunes. Armies march in war ravaged lands for dominion
-  over the scraps of land that remain unscared. Worst of all is the horror that lurks in the shadows, eternally
-  waiting for the time when it will consume all civilization. Enter now into the world of Halberd..."
 end
 
 ########### GAME BEGIN #########################################################
@@ -104,7 +49,7 @@ end
 
 def app
   @player = Player.new
-  # play_music
+  play_music
   title
   world_tag
   game_start
