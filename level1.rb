@@ -10,43 +10,45 @@ def play_music
     pid = fork{exec "afplay", "./music/Halberd_theme.m4a"}
 end
 
+############### OPENING SEQUENCE ################################################
 
 def title
-    puts ('  ___ ___        .__ ___.                    .___')
-    sleep(0.2)
-    puts (' /   |   \_____  |  |\_ |__   ___________  __| _/')
-    sleep(0.2)
-    puts ('/    ~    \__  \ |  | | __ \_/ __ \_  __ \/ __ | ')
-    sleep(0.2)
-    puts ('\    Y    // __ \|  |_| \_\ \  ___/|  | \/ /_/ | ')
-    sleep(0.2)
-    puts (' \___|_  /(____  /____/___  /\___  >__|  \____ | ')
-    sleep(0.2)
-    puts ('      \/      \/         \/     \/           \/  ')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts '       __                                     ________                           __       ________            ____             __                       '
-    sleep(0.2)
-    puts '      / /___  __  ___________  ___  __  __   /_  __/ /_  _________  __  ______ _/ /_     /_  __/ /_  ___     / __ \____ ______/ /______  ___  __________'
-    sleep(0.2)
-    puts ' __  / / __ \/ / / / ___/ __ \/ _ \/ / / /    / / / __ \/ ___/ __ \/ / / / __ `/ __ \     / / / __ \/ _ \   / / / / __ `/ ___/ //_/ __ \/ _ \/ ___/ ___/'
-    sleep(0.2)
-    puts '/ /_/ / /_/ / /_/ / /  / / / /  __/ /_/ /    / / / / / / /  / /_/ / /_/ / /_/ / / / /    / / / / / /  __/  / /_/ / /_/ / /  / ,< / / / /  __(__  )__  ) '
-    sleep(0.2)
-    puts '\____/\____/\__,_/_/  /_/ /_/\___/\__, /    /_/ /_/ /_/_/   \____/\__,_/\__, /_/ /_/    /_/ /_/ /_/\___/  /_____/\__,_/_/  /_/|_/_/ /_/\___/____/____/  '
-    sleep(0.2)
-    puts '                                 /____/                                /____/                                                                           '
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
-    puts ('###########################################################################################')
-    sleep(0.2)
+    sleep(0.1)
+    puts ('   ▄█    █▄       ▄████████  ▄█       ▀█████████▄     ▄████████    ▄████████ ████████▄')
+    sleep(0.1)
+    puts ('  ███    ███     ███    ███ ███         ███    ███   ███    ███   ███    ███ ███   ▀███')
+    sleep(0.1)
+    puts ('  ███    ███     ███    ███ ███         ███    ███   ███    █▀    ███    ███ ███    ███')
+    sleep(0.1)
+    puts (' ▄███▄▄▄▄███▄▄   ███    ███ ███        ▄███▄▄▄██▀   ▄███▄▄▄      ▄███▄▄▄▄██▀ ███    ███')
+    sleep(0.1)
+    puts ('▀▀███▀▀▀▀███▀  ▀███████████ ███       ▀▀███▀▀▀██▄  ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ███    ███')
+    sleep(0.1)
+    puts ('  ███    ███     ███    ███ ███         ███    ██▄   ███    █▄  ▀███████████ ███    ███')
+    sleep(0.1)
+    puts ('  ███    ███     ███    ███ ███▌    ▄   ███    ███   ███    ███   ███    ███ ███   ▄███')
+    sleep(0.1)
+    puts ('  ███    █▀      ███    █▀  █████▄▄██ ▄█████████▀    ██████████   ███    ███ ████████▀')
+    sleep(0.1)
+    puts ('                            ▀                                     ███    ███')
+    sleep(0.4)
+
+    border =  '--\--/--\--/--\--/--\--/--\--/--\--/--\--/--\--/--\--/--\--/--'
+    border_two = border + border
+     border_two.each_char do |c|
+       print c
+       sleep(0.01)
+     end
+  puts ('                                                                                                                                                 ')
+  puts (' ▐▄▄▄      ▄• ▄▌▄▄▄   ▐ ▄ ▄▄▄ . ▄· ▄▌    ▄▄▄▄▄ ▄ .▄▄▄▄        ▄• ▄▌ ▄▄ •  ▄ .▄    ▄▄▄▄▄ ▄ .▄▄▄▄ .    ·▄▄▄▄   ▄▄▄· ▄▄▄  ▄ •▄  ▐ ▄ ▄▄▄ ..▄▄ · .▄▄ ·')
+  sleep(0.1)
+  puts ('  ·██▪     █▪██▌▀▄ █·•█▌▐█▀▄.▀·▐█▪██▌    •██  ██▪▐█▀▄ █·▪     █▪██▌▐█ ▀ ▪██▪▐█    •██  ██▪▐█▀▄.▀·    ██▪ ██ ▐█ ▀█ ▀▄ █·█▌▄▌▪•█▌▐█▀▄.▀·▐█ ▀. ▐█ ▀.')
+  sleep(0.1)
+  puts ('▪▄ ██ ▄█▀▄ █▌▐█▌▐▀▀▄ ▐█▐▐▌▐▀▀▪▄▐█▌▐█▪     ▐█.▪██▀▐█▐▀▀▄  ▄█▀▄ █▌▐█▌▄█ ▀█▄██▀▐█     ▐█.▪██▀▐█▐▀▀▪▄    ▐█· ▐█▌▄█▀▀█ ▐▀▀▄ ▐▀▀▄·▐█▐▐▌▐▀▀▪▄▄▀▀▀█▄▄▀▀▀█▄')
+  sleep(0.1)
+  puts ('▐▌▐█▌▐█▌.▐▌▐█▄█▌▐█•█▌██▐█▌▐█▄▄▌ ▐█▀·.     ▐█▌·██▌▐▀▐█•█▌▐█▌.▐▌▐█▄█▌▐█▄▪▐███▌▐▀     ▐█▌·██▌▐▀▐█▄▄▌    ██. ██ ▐█ ▪▐▌▐█•█▌▐█.█▌██▐█▌▐█▄▄▌▐█▄▪▐█▐█▄▪▐█')
+  sleep(0.1)
+  puts (' ▀▀▀• ▀█▄▀▪ ▀▀▀ .▀  ▀▀▀ █▪ ▀▀▀   ▀ •      ▀▀▀ ▀▀▀ ·.▀  ▀ ▀█▄▀▪ ▀▀▀ ·▀▀▀▀ ▀▀▀ ·     ▀▀▀ ▀▀▀ · ▀▀▀     ▀▀▀▀▀•  ▀  ▀ .▀  ▀·▀  ▀▀▀ █▪ ▀▀▀  ▀▀▀▀  ▀▀▀▀')
   end
 
 # This is the explanation of the game. Mood setting tag that
@@ -54,22 +56,13 @@ def title
 def world_tag
   puts "                                                                        "
   puts "                                                                        "
-  # sentence =
   puts "In a grim and perlious world the darkness consumes all. Brave adventurers stalk forgotten halls
-  deep underground in the hopes of finding their fortunes. Armies march in war ravaged lands for dominion
-  over the scraps of land that remain untouched. Worst of all is the horror that lurks in the shadows, eternally
-  waiting for the time when they may consume all civilization. You may enter this world if you dare, but
-  be on your guard for the darkness awaits all!"
-  # sentence.each_char do |c|
-  #   print c
-  #   sleep(0.05)
-  # end
-  # puts "In a grim and perlious world the darkness consumes all. Brave adventurers stalk forgotten halls
-  # deep underground in the hopes of finding their fortunes. Armies march in war ravaged lands for dominion
-  # over the scraps of land that remain untouched. Worst of all is the horror that lurks in the shadows, eternally
-  # waiting for the time when they may consume all civilization. You may enter this world if you dare, but
-  # be on your guard for the darkness awaits all!"
+  deep underground for the slight chance to make their fortunes. Armies march in war ravaged lands for dominion
+  over the scraps of land that remain unscared. Worst of all is the horror that lurks in the shadows, eternally
+  waiting for the time when it will consume all civilization. Enter now into the world of Halberd..."
 end
+
+########### GAME BEGIN #########################################################
 
 def game_start
   puts "                                                                        "
@@ -107,7 +100,7 @@ end
 
 def app
   @player = Player.new
-  play_music
+  # play_music
   title
   world_tag
   game_start
