@@ -11,4 +11,4 @@ DEPENDENCIES
   byebug (~> 10.0)
 
 BUNDLED WITH
-   1.16.4
+   1.16.6
