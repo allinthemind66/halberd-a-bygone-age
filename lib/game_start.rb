@@ -1,15 +1,4 @@
-require 'artii'
-require './intro.rb'
-require './level1_start_room_choices.rb'
-require './input_choice.rb'
-require './dungeon_hall.rb'
-require './player.rb'
 require 'byebug'
-
-
-def play_music
-    pid = fork{exec "afplay", "./music/Halberd_theme.m4a"}
-end
 
 ########### GAME BEGIN #########################################################
 
@@ -46,17 +35,3 @@ def game_start
   puts "                                                                        "
   puts "                                                                        "
 end
-
-def app
-  @player = Player.new
-  play_music
-  title
-  world_tag
-  game_start
-  level_1_choices = Level1StartRoomChoices.new
-  level_1_choices.first_choice
-  level_1_choices.quit ? return : dungeon_hall = DungeonHall.new
-  dungeon_hall.choices
-end
-
-app

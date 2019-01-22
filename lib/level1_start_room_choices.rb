@@ -1,5 +1,5 @@
-require './input_choice.rb'
-require "./player.rb"
+require_relative './input_choice.rb'
+require_relative './player.rb'
 class Level1StartRoomChoices < InputChoice
   attr_reader :quit
   def initialize

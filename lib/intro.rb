@@ -1,5 +1,5 @@
 require 'artii'
-require './player.rb'
+require_relative './player.rb'
 require 'byebug'
 
 ############### OPENING SEQUENCE ################################################
