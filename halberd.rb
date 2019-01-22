@@ -11,9 +11,9 @@ require_relative 'lib/player.rb'
 
 def app
   @player = Player.new
-  play_music
-  title
-  world_tag
+  # play_music
+  # title
+  # world_tag
   game_start
   level_1_choices = Level1StartRoomChoices.new
   level_1_choices.first_choice

@@ -1,5 +1,6 @@
 require_relative './input_choice.rb'
 require_relative './player.rb'
+
 class Level1StartRoomChoices < InputChoice
   attr_reader :quit
   def initialize
@@ -13,11 +14,11 @@ class Level1StartRoomChoices < InputChoice
       choice = gets.chomp
       case choice
       when "forward", "north", "Forward", "North"
-        scroll_text("You see a closed door.")
+        scroll_text("You come upon a closed door.")
         puts "\n"
       when 'West', 'west', 'left', 'Left'
         if Player.all.first.inventory.include?("Torch")
-          puts "You see an empty wall where a torch was."
+          puts "You come upon an empty wall where a torch was."
         else
           scroll_text("There is nothing but a wall with a torch.")
           puts "\n"
@@ -26,22 +27,33 @@ class Level1StartRoomChoices < InputChoice
       when "East", 'east', 'Right', 'right'
         scroll_text("You look to your right and see a man shackled to the wall. Maybe you should go talk to him...")
         puts "\n"
-      when "help", 'Help', 'HELP'
-        puts '##############################################################'
-        puts 'Directional commands: Up, down, left, right, forward, behind'
-        puts '##############################################################'
-        puts 'Other Commands: Talk, Open Door, open chest'
-        puts '##############################################################'
-        puts 'Game Commands: Map, Save, Quit Game'
+      when "Back", "back", "south", "South"
+        scroll_text("This part of the room has broken shackles on the wall... Best get moving.")
+      when "help", 'Help', 'HELP', 'commands', 'Commands'
+        puts help
       when "inventory"
-        puts "You currently have: "
-        Player.all.first.inventory.each{|item| puts item }
+          puts "You currently have: "
+          Player.all.first.inventory.each{|item| puts item }
       when 'talk to man', 'talk', 'Talk', 'man', 'Talk to Man', 'Talk to Man'
         @door_locked = false
-        scroll_text("You walk over to the man and ask him his name. He responds, hesitantly and with some surprise,
-        'What?! Its me Ragnir.'
-        'You don't recognize me?' he says.
-        At this moment you hear a loud boom and the door unhinges slightly.\n")
+        scroll_text("You walk over to the man and ask him his name. ")
+        sleep(0.5)
+        scroll_text(" He responds, hesitantly and with some surprise,\n")
+        sleep(0.5)
+        scroll_text(" What?!\n")
+        sleep(0.2)
+        scroll_text(" You do not recognize me?\n")
+        sleep(0.8)
+        scroll_text(" Its me, Ragnir! We've been shackled here for years!\n")
+        sleep(0.3)
+        scroll_text (" You've finally lost your mind, you poor wretch!\n")
+        sleep(1)
+        scroll_text(" Wait...")
+        sleep(1.5)
+        scroll_text(" How did you undo your shackles?!\n")
+        sleep(0.5)
+        scroll_text("At this moment you hear a loud boom and the door unhinges slightly.\n")
+        puts "XX BOOM!!! XX"
         fork{exec "afplay", "./sounds/Explosion_2.wav"}
         sleep(1)
 
