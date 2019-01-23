@@ -1,5 +1,7 @@
+require 'colorize'
 require_relative './input_choice.rb'
 require_relative './player.rb'
+
 
 class Level1StartRoomChoices < InputChoice
   attr_reader :quit
@@ -34,8 +36,8 @@ class Level1StartRoomChoices < InputChoice
       when "inventory"
           puts "You currently have: "
           Player.all.first.inventory.each{|item| puts item }
-      when 'talk to man', 'talk', 'Talk', 'man', 'Talk to Man', 'Talk to Man'
-        @door_locked = false
+      when 'talk to man', 'talk', 'Talk', 'man', 'Talk to Man', 'Talk to Man', 'talk man', 'Talk Man'
+        if @door_locked === true
         scroll_text("You walk over to the man and ask him his name. ")
         sleep(0.5)
         scroll_text(" He responds, hesitantly and with some surprise,\n")
@@ -53,14 +55,17 @@ class Level1StartRoomChoices < InputChoice
         scroll_text(" How did you undo your shackles?!\n")
         sleep(0.5)
         scroll_text("At this moment you hear a loud boom and the door unhinges slightly.\n")
-        puts "XX BOOM!!! XX"
+        puts "**BOOM**".red
         fork{exec "afplay", "./sounds/Explosion_2.wav"}
+        @door_locked = false
         sleep(1)
 
         scroll_text("You hear a faint voice mumble '.....My liege...escape while theres still time...
         ARRGHHHHHHHH!")
-
-
+      else
+        scroll_text ("Theres our chance for freedom! Go and get help!\n")
+        scroll_text ("When you find a way to break my shackles... don't forget old Ragnir!")
+      end
         puts "\n"
       when "hello", 'Hello'
         puts 'A voice somewhere responds "Hi there."'
