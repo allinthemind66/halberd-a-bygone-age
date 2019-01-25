@@ -7,10 +7,10 @@ class InputChoice
   def help
     # Using an array for these commands so we can just add to it here.
     directionals = ["Up", "Down", "left", "Right", "Forward", "Back", "North", "South", "East", "West"]
-    actions = ["Talk", "Talk + Object", "Look", "Door", "Open Door", "Chest", "Open Chest"]
+    actions = ["Talk", "Talk + Object", "Look", "Look + directional", "Search", "Search + Object" "Door", "Open Door", "Chest", "Open Chest"]
     game_commands = ["Map", "Save", "Quit", "Quit Game"]
     puts ('                                                             ')
-    puts 'Some commands you can use:'.upcase
+    puts 'Some commands you can try:'.upcase
     puts '#####################################################################'
     puts 'Directional commands: ' + directionals.join(", ")
     puts '#####################################################################'

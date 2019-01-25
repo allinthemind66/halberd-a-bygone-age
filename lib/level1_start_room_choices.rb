@@ -34,6 +34,8 @@ class Level1StartRoomChoices < InputChoice
       when "help", 'Help', 'HELP', 'commands', 'Commands'
         puts help
       when "inventory"
+        if Player.all.first.inventory.empty?
+          scroll_text ('Your inventory is currently empty')
           puts "You currently have: "
           Player.all.first.inventory.each{|item| puts item }
       when 'talk to man', 'talk', 'Talk', 'man', 'Talk to Man', 'Talk to Man', 'talk man', 'Talk Man'
@@ -79,9 +81,8 @@ class Level1StartRoomChoices < InputChoice
         end
       when "leave room", 'Leave Room', 'Leave room', 'leave', 'Leave'
         if @door_locked === false
-          scroll_text("You walk outside into a dimly lit hallway.")
           puts "\n"
-          fork{ exec "killall", "afplay"}
+          fork{ exec  "killall", "afplay"}
           break
         else
           scroll_text("You can't open the door. It's locked from the outside!")

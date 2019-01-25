@@ -26,7 +26,4 @@ class Player
   def add_item(item)
     @inventory << item
   end
-
-
-
 end
