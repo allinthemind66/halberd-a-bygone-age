@@ -10,12 +10,12 @@ class InputChoice
     actions = ["Talk", "Talk + Object", "Look", "Look + directional", "Search", "Search + Object" "Door", "Open Door", "Chest", "Open Chest"]
     game_commands = ["Map", "Save", "Quit", "Quit Game"]
     puts ('                                                             ')
-    puts 'Some commands you can try:'.upcase
-    puts '#####################################################################'
+    puts 'Some commands you can use:'.upcase
+    puts '######################################################################################'
     puts 'Directional commands: ' + directionals.join(", ")
-    puts '#####################################################################'
+    puts '######################################################################################'
     puts 'Other Commands: ' + actions.join(", ")
-    puts '#####################################################################'
+    puts '######################################################################################'
     puts 'Game Commands: ' + game_commands.join(", ")
   end
 
