@@ -25,4 +25,9 @@ class InputChoice
       sleep (0.05)
     end
   end
+
+  def new_line()
+    puts "\n"
+    puts "\n"
+  end
 end

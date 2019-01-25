@@ -7,7 +7,7 @@ class DungeonHall < InputChoice
   end
   def choices
     sleep(0.01)
-    puts "\n"
+    new_line
     play_music
     scroll_text ("You leave the room. You are in a dungeon hallway.\n")
     scroll_text("On the floor lies the body of a masked man\n")
@@ -18,22 +18,41 @@ class DungeonHall < InputChoice
       puts "What would you like to do?"
       choice = gets.chomp
       case choice
-      when "help", 'Help', 'HELP', 'commands', 'Commands'
+      when 'help', 'commands'
         puts help
-      when "look", "Look"
+        new_line
+      when 'look'
         scroll_text ("This hallway is partially lit along its way with torches.\n")
-        scroll_text ("The floor is dirty and the walls are covered in soot\n")
-        puts "\n"
-      when "Look North", "look north", "look forward", "Look Forward"
+        scroll_text ("The floor is dirty and the walls are covered in soot.\n")
+        scroll_text ("The body of the man lies in front of the door.\n")
+        new_line
+      when 'search', 'search man'
+        scroll_text ("You search the dead mans body and find the following items: \n")
+        scroll_text ("1. A sword\n")
+        scroll_text ("2. 12 Gold Coins\n")
+        scroll_text ("3. A Coil of Rope\n")
+        new_line
+      when 'take items'
+        scroll_text ('You can only hold two items at a time!')
+        new_line
+      when 'look north', 'look forward'
         scroll_text ("Looking down the hall you can see shadows racing about and hear the sounds of fighting taking place.\n")
         scroll_text (" Maybe you should arm yourself...")
-        puts "\n"
-      when "Look Backwards", "look backwards", "look back", "Look Back", "Look South", "look south"
+        new_line
+      when 'look backwards', 'look back', 'look south'
         scroll_text ("You look back and see the open door to the dungeon cell in which Ragnir is still shackled.")
-        puts "\n"
-      when "look right", "look left", "look west", "look east", "Look West", "Look East", "Look Left", "Look Right"
+        new_line
+      when 'look right', 'look left', 'look west', 'look east', 'look wall', 'wall'
         scroll_text ("You see a dirty looking wall")
-        puts "\n"
+        new_line
+      when 'south', 'back', 'go back', 'go south'
+        scroll_text ("You should probably try to find a way to get Ragnir out of his shackles before going back in...")
+        new_line
+      when 'left', 'right', 'east', 'west', 'go east', 'go west', 'go left', 'go right'
+        scroll_text ("You see a dirty looking wall")
+        new_line
+      when 'north', 'forward', 'go north', 'go forward'
+        new_line
       when "quit"
         puts 'goodbye'
         fork{ exec "killall", "afplay"}
