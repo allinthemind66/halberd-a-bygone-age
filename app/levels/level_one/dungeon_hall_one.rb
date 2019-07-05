@@ -1,8 +1,14 @@
-class DungeonHallOne
+require_relative "../room"
+
+class DungeonHallOne < Room
   attr_accessor :exit, :quit
 
-  def play_music
-    fork{ exec "afplay", "./music/dungeon_hallway.mp3"}
+  def entrance
+    scroll_text ("You leave the room. You are in a dungeon hallway.\n")
+    scroll_text ("On the floor lies the body of a masked man\n")
+    scroll_text ("He is dead and has several large gashes throughout his body.\n")
+    scroll_text ("It seems the door was blown open using some type of dark paste.\n")
+    scroll_text ("Further down in the dungeon you can hear the sounds of fighting\n")
   end
 
   def choices(player)

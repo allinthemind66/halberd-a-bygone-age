@@ -39,14 +39,3 @@
   def clear
     system 'clear'
   end
-
-  # def display_inventory
-  #   Player.all.first.inventory.compact!
-  #   if Player.all.first.inventory.empty?
-  #     scroll_text ('Your inventory is currently empty.')
-  #     new_line
-  #   else
-  #     puts "You currently have: "
-  #     Player.all.first.inventory.each_with_index{|item, index| scroll_text("#{index + 1}. #{item}\n") }
-  #   end
-  # end

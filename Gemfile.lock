@@ -39,8 +39,11 @@ GEM
       railties (>= 3.2, < 6.1)
     equatable (0.6.1)
     erubi (1.8.0)
+    ffi (1.11.1)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    levenshtein-ffi (1.1.0)
+      ffi (~> 1.9)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -116,6 +119,7 @@ DEPENDENCIES
   byebug (~> 10.0)
   colorize (~> 0.8.1)
   dotenv-rails
+  levenshtein-ffi
   paint
   pry
   require_all

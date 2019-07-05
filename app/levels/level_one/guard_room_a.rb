@@ -1,0 +1,3 @@
+class GuardRoomA < Room 
+       
+end

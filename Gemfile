@@ -17,6 +17,9 @@ gem "byebug", "~> 10.0"
 # Use to require every file throughout the program
 gem 'require_all'
 
+# Use to calculate user text 
+gem 'levenshtein-ffi', :require => 'levenshtein'
+
 # Style Gems
 gem "artii", "~> 2.1"
 gem 'paint'
