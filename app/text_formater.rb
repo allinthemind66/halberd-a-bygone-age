@@ -1,9 +1,3 @@
-require_relative './player.rb'
-
-class InputChoice
-  def hello
-    puts "hello!"
-  end
   def help
     # Using an array for these commands so we can just add to it here.
     directionals = ["Up", "Down", "left", "Right", "Forward", "Back", "North", "South", "East", "West"]
@@ -26,20 +20,33 @@ class InputChoice
     end
   end
 
-  def new_line()
-    puts "\n"
-    puts "\n"
+  def spacer
+    puts "\n\n"
   end
 
-  def display_inventory
-    Player.all.first.inventory.compact!
-    if Player.all.first.inventory.empty?
-      scroll_text ('Your inventory is currently empty.')
-      new_line
-    else
-      puts "You currently have: "
-      Player.all.first.inventory.each_with_index{|item, index| scroll_text("#{index + 1}. #{item}\n") }
+  def specific_spacer(number)
+      number.times do
+      puts "\n"
     end
   end
 
-end
+  def good_bye
+    sleep 1.0
+    clear
+    exit
+  end
+
+  def clear
+    system 'clear'
+  end
+
+  # def display_inventory
+  #   Player.all.first.inventory.compact!
+  #   if Player.all.first.inventory.empty?
+  #     scroll_text ('Your inventory is currently empty.')
+  #     new_line
+  #   else
+  #     puts "You currently have: "
+  #     Player.all.first.inventory.each_with_index{|item, index| scroll_text("#{index + 1}. #{item}\n") }
+  #   end
+  # end
