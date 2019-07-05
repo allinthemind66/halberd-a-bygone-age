@@ -3,6 +3,9 @@ source "https://rubygems.org"
 # Use for Database
 gem "sinatra-activerecord"
 
+# Use for creating environment variables
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use for SQL Database
 gem "sqlite3"
 

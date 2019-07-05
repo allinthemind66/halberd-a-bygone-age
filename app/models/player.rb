@@ -14,9 +14,9 @@ class Player < ActiveRecord::Base
     end
   end 
 
-  def encumbered?
-   #  This method will test if the player is too encumbered to pick up another item
-   #  will return true or false
+  def encumbered?(item_weight)
+    total_weight = self.items.reduce(0) {|sum, item| sum + item.weight } + item_weight
+    total_weight > self.encumberance ? true : false
   end
 
 end
