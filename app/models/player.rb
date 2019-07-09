@@ -2,7 +2,19 @@ class Player < ActiveRecord::Base
   has_many :items
 
   def add_item(name, weight, price, weapon_strength)
-    Item.create(name: name, player_id: self.id, weight: weight, price: price, weapon_strength: weapon_strength)
+    item = Item.new(
+      name: name, 
+      weight: weight, 
+      price: price, 
+      weapon_strength: weapon_strength
+    )
+
+    if self.encumbered?(item.weight)
+      scroll_text "You are too encumbered to pick up this item"
+    else
+      item.update(player_id: self.id)
+      self.reload
+    end
     self.reload
   end
 

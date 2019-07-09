@@ -21,6 +21,10 @@ class StartRoom < Room
     specific_spacer(3)
   end
 
+  def exit
+    scroll_text "You open the door, fully. As the smoke clears you begin to step through..."
+  end
+
   def choices(player)
     player.update(
       strength: 3, 
@@ -114,7 +118,6 @@ class StartRoom < Room
       when 'leave room', 'leave'
         if @door_locked === false
           specific_spacer(2)
-          # fork{ exec  "killall", "afplay"}
           break
         else
           scroll_text ("You can't open the door. It's locked from the outside!")
@@ -125,7 +128,7 @@ class StartRoom < Room
         if player.has_item?("torch")
           scroll_text ('You look at the torch in your hand. It burns strongly... for now')
           specific_spacer(2)
-        elsif !@items.include?("torch")
+        elsif @floor.include?("torch")
           scroll_text ("The torch is now on the floor. It no longer burns as brightly.")
           specific_spacer(2)
         else 
@@ -168,12 +171,12 @@ class StartRoom < Room
         else
           specific_spacer(2)
            drop_prompt = TTY::Prompt.new
-           item_to_drop = drop_prompt.select("What would you like to drop?", marker: @sun_marker) do |menu|
+           item_to_drop = drop_prompt.select("Which item would you like to drop?", marker: @sun_marker) do |menu|
              player.items.each do |item|
                menu.choice "#{item.name}"
              end
            end
-
+          specific_spacer(2)
            player.drop_item(item_to_drop)
            @floor << item_to_drop
         end
